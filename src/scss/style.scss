@@ -1,0 +1,61 @@
+@import './mixings';
+@import './variables';
+@import './start';
+@import './hamburger';
+
+body {
+  background-color: $bg-color;
+}
+#page-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+main {
+  margin: 2rem 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    width: 50px;
+  }
+}
+nav {
+  background-color: $bg-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding: 0.5em 0;
+  }
+  &.isActive {
+    visibility: visible;
+    opacity: 1;
+  }
+  @include screen(small) {
+    position: relative;
+    width: auto;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    flex-flow: row nowrap;
+    a {
+      font-size: inherit;
+      padding: 0 1em;
+    }
+  }
+}
