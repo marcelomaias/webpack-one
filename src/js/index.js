@@ -1,7 +1,8 @@
 import '../scss/style.scss'
-let Elem = document.querySelector('#box')
 
-Elem.innerHTML = 'I am added via JavaScript!!!!!'
+const box = document.querySelector('#box')
+
+box.innerHTML = 'I am added via JavaScript!!!!!'
 
 console.log('blaaauaaaa!')
 
